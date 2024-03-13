@@ -1,0 +1,40 @@
+let arr1=[10,20,30]
+let arr2=[20,25,30,40,50]
+
+function sortedArray(arr1,arr2){
+
+let l1=arr1.length
+let l2=arr2.length
+let output=[]
+
+let i=0
+let j=0
+while(i<l1 && j<l2){
+    if(arr1[i]===arr2[j]){
+        i++
+        j++
+    }else if (arr1[i]<arr2[j]){
+    
+        output.push(arr1[i])
+        i++
+
+    }else if (arr1[i]>arr2[j]){
+       
+        output.push(arr2[j])
+        j++
+    }
+}
+while(i<l1){
+    output.push(arr1[i])
+   i++
+}
+while(j<l2){
+    output.push(arr2[j])
+    j++
+}
+ return output
+}
+
+
+let a=sortedArray(arr1,arr2)
+console.log(a)
