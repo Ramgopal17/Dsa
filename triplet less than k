@@ -1,0 +1,23 @@
+let arr=[12,7,3,9,11,4,2]
+  k=20
+  function tripletSum(arr,k){
+    let res=[]
+    arr.sort((a,b)=>(a-b))
+    for(i=0;i<arr.length-2;i++){
+        let curr=k-arr[i]
+         s=i+1
+        e=arr.length-1
+        while(s<=e){
+            if(arr[s]+arr[e]>=k){
+                e--
+            }else{
+                res.push(arr[s],arr[e],curr)
+                s++
+            }
+        }
+    }
+return res
+  }
+
+  let a=tripletSum(arr,k)
+  console.log(a);
